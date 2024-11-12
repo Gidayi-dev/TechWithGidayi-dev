@@ -37,3 +37,12 @@
 .links a:hover {
   color: var(--color-extra);
 }
+
+@media screen and (max-width: 1000px) {
+  .bar {
+    gap: 0.4rem;
+  }
+  .links {
+    margin: 0.4rem;
+  }
+}

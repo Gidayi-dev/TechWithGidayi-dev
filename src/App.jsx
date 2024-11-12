@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Im
 import Blogs from "./components/blogs";
 import Header from "./components/header";
 import FullBlogPage from "./components/fullblog";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<FullBlogPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

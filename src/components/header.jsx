@@ -12,7 +12,6 @@ function Header() {
       </div>
       <div className="bar">
         <div className="links">
-          {/* Use Link instead of a for internal navigation */}
           <Link to="/blogs">Blogs</Link>
         </div>
         <div className="links">

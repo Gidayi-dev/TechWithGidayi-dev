@@ -6,7 +6,6 @@
   --color-text: black;
 }
 
-/* blogs.css */
 .blogs-section {
   padding: 2rem;
   background-color: var(--color-primary);
@@ -54,6 +53,7 @@
   color: var(--color-primary);
   border-radius: 4px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .read-more:hover {
