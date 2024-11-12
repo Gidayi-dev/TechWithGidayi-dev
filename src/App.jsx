@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Blogs />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<FullBlogPage />} />
       </Routes>
     </Router>

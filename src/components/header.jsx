@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 import Logo from "/src/assets/icon.png";
@@ -11,13 +12,15 @@ function Header() {
       </div>
       <div className="bar">
         <div className="links">
-          <a href="#">Blogs</a>
+          {/* Use Link instead of a for internal navigation */}
+          <Link to="/blogs">Blogs</Link>
         </div>
         <div className="links">
-          <a href="#">Contact Us</a>
+          <Link to="/contact">Contact Us</Link>
         </div>
       </div>
     </div>
   );
 }
+
 export default Header;

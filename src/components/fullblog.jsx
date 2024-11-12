@@ -1,39 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./fullblog.css";
 
 function FullBlogPage() {
-  const { id } = useParams(); // Get the id from the URL parameter
+  const { id } = useParams();
   const [blog, setBlog] = useState(null);
 
   const blogs = [
     {
       id: 1,
-      title: "OpenAI’s Measures Against Deepfakes",
-      content:
-        "Full content of the blog about OpenAI measures against deepfakes...",
-    },
-    {
-      id: 2,
-      title: "The Future of Artificial Intelligence in Healthcare",
-      content:
-        "Full content of the blog discussing AI in healthcare and its impact...",
-    },
-    {
-      id: 3,
-      title: "5 Emerging Tech Trends to Watch in 2024",
-      content:
-        "Full content of the blog about the top 5 emerging tech trends for 2024...",
-    },
-    {
-      id: 4,
-      title: "AI Ethics: Addressing Bias and Accountability",
-      content:
-        "Full content of the blog discussing AI ethics and accountability...",
+      title: <h2>OpenAI's Measures Against Deepfakes</h2>,
+      content: `
+        <p>OpenAI has recently taken significant steps to combat the rise of deepfakes, especially with the upcoming 2024 elections. Here's a detailed explanation of their measures:</p>
+
+        <h3>1. Deepfake Detection Tool</h3>
+        <p>OpenAI has developed a new AI image detection classifier that can identify AI-generated images with a high degree of accuracy.</p>
+
+        <h3>2. Tamper-Resistant Metadata</h3>
+        <p>To enhance the detection process, OpenAI has added tamper-resistant metadata to all images created and edited by DALL-E 3.</p>
+        
+        <h3>3. Integration with Future Tools</h3>
+        <p>OpenAI plans to integrate this metadata standard into its upcoming video generator, Sora.</p>
+        
+        <blockquote>"Deepfakes have become a significant concern, especially with their potential to influence public opinion and disrupt elections."</blockquote>
+      `,
     },
   ];
 
   useEffect(() => {
-    // Find the blog that matches the current id
     const currentBlog = blogs.find((blog) => blog.id === parseInt(id));
     setBlog(currentBlog);
   }, [id]);
@@ -44,8 +38,11 @@ function FullBlogPage() {
 
   return (
     <div className="full-blog">
-      <h2>{blog.title}</h2>
-      <p>{blog.content}</p>
+      <h1>{blog.title}</h1>
+      <div
+        className="blog-content"
+        dangerouslySetInnerHTML={{ __html: blog.content }}
+      />
     </div>
   );
 }
